@@ -21,14 +21,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		* tambahkan saja 103616137253 + 144115188075855872
 		* hasil totalnya: 144115291691993125
 		*---------------------------------------------------------*/
-		$cols = "103616137253"; // atau 144115291691993125
+		$cols = "103616137253"; // atau 144115291691993125 untuk sertakan request Time last crawled
 		$requestUrl = "http://lsapi.seomoz.com/linkscape/url-metrics/?Cols=".$cols."&AccessID=".$accessID."&Expires=".$expires."&Signature=".$urlSafeSignature;
 		$batchedDomains = array($url);
 		$encodedDomains = json_encode($batchedDomains);
 		$options = array(
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_POSTFIELDS     => $encodedDomains
-      );
+     		CURLOPT_RETURNTRANSFER => true,
+      		CURLOPT_POSTFIELDS     => $encodedDomains
+     		 );
 		$ch = curl_init($requestUrl);
 		curl_setopt_array($ch, $options);
 		$content = curl_exec($ch);
