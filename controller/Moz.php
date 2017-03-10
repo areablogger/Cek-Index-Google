@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		print_r($contents); // hasil
 	}
 	  
-	public function grab_data($url){
+	public function grabdata($url){
 		$data['datamoz']  = "";
 		
 		if(isset($this->input->post('submit') !== ""){	
