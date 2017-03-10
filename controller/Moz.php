@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		parent::__construct();
 	}
   
-	public function ambil_data ($url){
+	protected function ambil_data ($url){
 		$accessID = 'xxxxx'; // xxxx ganti dengan accesID Mozscape kamu
 		$secretKey = 'xxxxx'; // xxxx ganti dengan secretKey Mozscape kamu
 		$expires = time() + 300; // waktu expired
@@ -35,6 +35,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		curl_close( $ch );
 		$contents = json_decode($content);
 		print_r($contents); // hasil
+	}
+	  
+	public function grab_data($url){
+		$data['datamoz']  = "";
+		
+		if(isset($this->input->post('submit') !== ""){	
+			$url = $this->input->post('url');
+			$data['datamoz'] = $this->ambil_data($url);
+		}
+		
+		$this->load->view('main', $data);
+		 
+		   
 	}
     
 }
