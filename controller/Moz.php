@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 	public function __construct(){
 		parent::__construct();
+		$this->load->helper(array('form', 'url'));
 	}
   
 	protected function ambil_data ($url){
@@ -37,10 +38,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		print_r($contents); // hasil
 	}
 	  
-	public function grabdata($url){
+	public function grabdata(){
 		$data['datamoz']  = "";
 		
-		if(isset($this->input->post('submit') !== ""){	
+		if($this->input->post('submit') !== ""){	
 			$url = $this->input->post('url');
 			$data['datamoz'] = $this->ambil_data($url);
 		}
@@ -51,3 +52,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
     
 }
+
