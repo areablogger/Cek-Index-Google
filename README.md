@@ -13,3 +13,5 @@ Tidak cukup dengan meletakkan url.
 Anda perlu melakukan pengecekan pada Google Cache untuk mendapatkan hasil apakah update telah terbaca oleh Google atau belum.
 
 Cara termudah adalah membangun satu situs yang akan secara otomatis melakukan pengecekan untuk Anda.
+
+Tutorial lengkap di : [Aplikasi untuk Melakukan Pengecekan Index Google, Begini Cara Buatnya](https://www.areablogger.com/aplikasi-untuk-melakukan-pengecekan-index-google-begini-cara-buatnya/)
